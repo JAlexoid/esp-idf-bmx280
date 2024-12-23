@@ -42,6 +42,7 @@ typedef struct bmx280_t bmx280_t;
  * @return A non-null pointer to the driver structure on success.
  */
 BMXAPI bmx280_t* bmx280_create_master(i2c_master_bus_handle_t bus_handle);
+BMXAPI bmx280_t* bmx280_create_master_hz(i2c_master_bus_handle_t bus_handle, uint32_t clock_speed);
 // legacy define for existing code bases
 #define bmx280_create(port) bmx280_create_legacy(port)
 #define bmx280_create_legacy(port) static_assert(0, "You have the wrong driver configuration for using the legacy I2C driver.")
