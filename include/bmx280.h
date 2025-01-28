@@ -55,6 +55,7 @@ BMXAPI bmx280_t* bmx280_create_master_hz(i2c_master_bus_handle_t bus_handle, uin
 BMXAPI bmx280_t* bmx280_create_legacy(i2c_port_t port);
 // legacy define for existing code bases
 #define bmx280_create(port) bmx280_create_legacy(port)
+#define bmx280_create_master_hz(port, hz) static_assert(0, "You have the wrong driver configuration for using the new I2C master driver.")
 #define bmx280_create_master(port) static_assert(0, "You have the wrong driver configuration for using the new I2C master driver.")
 #endif
 
